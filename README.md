@@ -62,6 +62,8 @@ sudo systemctl restart shiny-server
 ## Define packages repository 
 Use the check_packages.R to know which of your packages are CRAN and which are Bioconductor 
 - Usage
+  - Input: Path to CSV File containing package names on the first column, and output directory to write the output files
+  - Output: Two files containing CRAN and Bioconductor packages  
   ```
-  Rscript --no-save --no-restore --vanilla check_packages.R
+  Rscript --no-save --no-restore --vanilla check_packages.R Path_to_csv OutPath
   ```
