@@ -16,6 +16,10 @@ sudo apt-get install -y gdebi-core
 wget https://download3.rstudio.org/ubuntu-18.04/x86_64/shiny-server-1.5.20.1002-amd64.deb
 sudo gdebi shiny-server-1.5.20.1002-amd64.deb
 ```
+## Copy the app files 
+```
+cp app_dir /srv/shiny-server/app_name
+```
 ## Apache2 Installation 
 ```
 sudo apt-get install -y apache2
@@ -25,8 +29,6 @@ sudo a2enmod proxy_http
 sudo a2enmod proxy_wstunnel
 LoadModule proxy_module modules/mod_proxy.so
 LoadModule proxy_wstunnel_module modules/mod_proxy_wstunnel.so
-#Copy the app files 
-cp app_dir /srv/shiny-server/app_name
 ```
 ## Modify Apache2 configuration file
 - Add the following lines to 000-default.conf (/etc/apache2/sites-available/000-default.conf)
