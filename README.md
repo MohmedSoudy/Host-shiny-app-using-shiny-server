@@ -30,6 +30,7 @@ cp app_dir /srv/shiny-server/app_name
 ```
 ## Modify Apache2 configuration file
 - Add the following lines to 000-default.conf (/etc/apache2/sites-available/000-default.conf)
+- An example file is attached to the repository 
 ```
 <VirtualHost *:80>
 
@@ -41,11 +42,24 @@ cp app_dir /srv/shiny-server/app_name
  ProxyRequests Off
 ```
 ## Enable Apache2 and Shiny-Server 
+```
 sudo /etc/init.d/apache2 restart
 sudo systemctl enable apache2
 sudo systemctl enable shiny-server 
-sudo systemctl restart shiny-server 
+sudo systemctl restart shiny-server
+```
 ## Install your R packages using the following commands 
-```
-sudo su - \ -c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
-```
+- CRAN
+  ```
+  sudo su - \ -c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
+  ```
+- Bioconductor
+  ```
+  sudo su - \ -c "R -e \"BiocManager::install('msa')\""
+  ```
+## Define packages repository 
+Use the check_packages.R to know which of your packages are CRAN and which are Bioconductor 
+- Usage
+  ```
+  Rscript --no-save --no-restore --vanilla check_packages.R
+  ```
