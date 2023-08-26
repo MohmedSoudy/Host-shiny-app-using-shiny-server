@@ -8,7 +8,7 @@ sudo apt update && sudo apt upgrade
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 sudo apt install r-base r-base-dev -y
-sudo su - \ -c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
+sudo Rscript -e "install.packages('shiny', repos='https://cran.rstudio.com/')"
 ```
 ## Shiny-Sever Installation 
 ```
@@ -53,11 +53,11 @@ sudo systemctl restart shiny-server
 ## Install your R packages using the following commands 
 - CRAN
   ```
-  sudo su - \ -c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
+  sudo Rscript -e "install.packages('shiny', repos='https://cran.rstudio.com/')"
   ```
 - Bioconductor
   ```
-  sudo su - \ -c "R -e \"BiocManager::install('msa')\""
+  sudo Rscript -e \"BiocManager::install('msa')"
   ```
 ## Define packages repository 
 Use the check_packages.R to know which of your packages are CRAN and which are Bioconductor 
