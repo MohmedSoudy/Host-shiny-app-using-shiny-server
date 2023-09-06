@@ -1,5 +1,5 @@
 # Host-shiny-app-using-shiny-server
-A step by step guide on how to how to host shiny app using shiny-server and apache2
+A step by step guide on how to host shiny app using shiny-server and apache2
 ## Update the system 
 ```
 sudo apt update && sudo apt upgrade 
